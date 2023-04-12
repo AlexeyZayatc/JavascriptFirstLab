@@ -10,17 +10,13 @@ if (!isNaN(parseFloat(n)) && isFinite(n) && n%1===0){
     document.write(html);
     
     html='<table align="center">';
-    for(let i = 0; i < 8; ++i){
+    for(let i = 0; i < n; ++i){
         html+='<tr>';
-        for(let j = 0; j < 8; ++j){
-            if(i==0 || j==0 || i==7 || j==7)
-                html+='<td>1</td>';
-            else if (((j==1 || j==6)) || ((i==1||i==6)))
-                html+='<td>2</td>';
-            else if ((i==2 || i==5) || (j==2 || j==5))
-                html+='<td>3</td>';
-            else 
-                html+='<td>4</td>';
+        for(let j = 0; j < n; ++j){
+            if(i%2==1 || j%2==1)
+                html+='<td>'+(Math.min(i,j,n-i-1,n-j-1)+1)+'</td>';
+            else
+                html+='<td>'+(Math.min(i,j,n-i-1,n-j-1)+1)+'</td>';
         }
         html+='</tr>';
     }
