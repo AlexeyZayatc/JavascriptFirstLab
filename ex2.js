@@ -1,5 +1,5 @@
 let n = prompt("Введите n:");
-if (!isNaN(parseFloat(n)) && isFinite(n) && n%1===0){
+if (!isNaN(parseFloat(n)) && isFinite(n) && n%1===0 &&(n>2 && n<15)){
     let strBeg = '<hr width=';
     let html = '';
     let latestWidth=0;
