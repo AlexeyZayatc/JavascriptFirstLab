@@ -11,13 +11,20 @@ function check(num){
 return false;
 }
 
-let seq = '';
 let number = prompt("Введите число:");
-while (!isNaN(parseFloat(number)) && isFinite(number) && number%1===0){
-number = parseInt(number);
-if(check(number)){
-    seq+=number+' ';
-}    
-number = prompt("Введите число:");
+if (isNaN(parseFloat(number)) || !isFinite(number)){
+    alert('Введено неверное первое число!');
+}
+else{
+let seq = '';
+while (!isNaN(parseFloat(number)) && isFinite(number)){
+    if(number%1===0){
+    number = parseInt(number);
+    if(check(number)){
+        seq+=number+' ';
+    }    
+    }
+    number = prompt("Введите число:");
 }
 document.write(seq);
+}
